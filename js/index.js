@@ -43,13 +43,31 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
 //Links 
-const navA = document.querySelectorAll("nav a")
+let navA = document.querySelectorAll("nav a")
 
 
 for (let i = 0; i < navA.length; i++) {
   const contents = Object.values(siteContent.nav)
   navA[i].textContent = contents[i];
+  navA[i].style.color = "seagreen";
+
 }
+
+//Added 2 links for task 3 (append and prepend) and made them green
+
+const navAdd = document.querySelector("nav");
+
+const appendLink = document.createElement("a");
+appendLink.href = "#";
+appendLink.textContent = "Append";
+navAdd.append(appendLink);
+appendLink.style.color = "seagreen";
+
+const prependLink = document.createElement("a");
+prependLink.href = "#";
+prependLink.textContent = "Prepend";
+navAdd.prepend(prependLink);
+prependLink.style.color = "seagreen";
 
 
 //Main Header IMG
@@ -63,7 +81,7 @@ document.querySelector(".cta button").textContent = siteContent.cta.button;
 
 
 
-
+//Main content titles
 
 const h4Titles = document.querySelectorAll(".text-content h4")
 
@@ -74,9 +92,12 @@ h4Titles[3].textContent = siteContent["main-content"]["product-h4"]
 h4Titles[4].textContent = siteContent["main-content"]["vision-h4"]
 
 
+//Main content IMG
+
 document.getElementById("middle-img").src = siteContent["main-content"]["middle-img-src"];
 
 
+//Main content paragraphs
 
 const mainContentP = document.querySelectorAll(".text-content p")
 
@@ -87,10 +108,12 @@ mainContentP[3].textContent = siteContent["main-content"]["product-content"]
 mainContentP[4].textContent = siteContent["main-content"]["vision-content"]
 
 
+//Contact h4
 
 document.querySelector(".contact h4").textContent = siteContent.contact["contact-h4"];
 
 
+//Contact info
 
 const contactInfo = document.querySelectorAll(".contact p")
 
@@ -105,9 +128,7 @@ document.querySelector("footer p").textContent = siteContent.footer.copyright;
 
 
 
-
-
-
+// Stretch goal add event listener to Header IMG 
 
 document.getElementById("cta-img").addEventListener("click", function () {
 
