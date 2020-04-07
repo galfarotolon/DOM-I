@@ -132,5 +132,10 @@ document.querySelector("footer p").textContent = siteContent.footer.copyright;
 
 document.getElementById("cta-img").addEventListener("click", function () {
 
+  //changes original image for internet troll face image
   document.getElementById("cta-img").src = "img/troll-face.jpg"
+
+  //hides current h1 and button to only show the troll image
+  document.querySelector(".cta-text h1").style.display = "none";
+  document.querySelector(".cta-text button").style.display = "none";
 });
